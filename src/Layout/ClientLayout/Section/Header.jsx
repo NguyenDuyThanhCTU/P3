@@ -8,14 +8,17 @@ import { RxCross1 } from "react-icons/rx";
 import { HeaderItems } from "../../../Utils/item";
 import DropDown from "../Item/DropDown";
 import { useData } from "../../../Context/DataProviders";
+import { useStateProvider } from "../../../Context/StateProvider";
 
 const Header = () => {
   const [Hidden, setHidden] = useState(false);
-  const [isSelected, setSelected] = useState(0);
-  const navigate = useNavigate();
+  const { setIsOpen } = useStateProvider();
   const HandleSelected = (idx) => {
     if (idx === 4) {
       window.open("tel:0933456474", "_blank");
+    }
+    if (idx === 3) {
+      setIsOpen("Drop-header");
     }
   };
   return (
@@ -30,7 +33,7 @@ const Header = () => {
               className="w-14"
             />
           </div>
-          <div className="flex gap-14 items-center">
+          <div className="flex gap-14 items-center ">
             {HeaderItems.map((items, idx) => (
               <Link to={items.link}>
                 <div
@@ -38,7 +41,7 @@ const Header = () => {
                   className="font-bold text-[22px] hover:scale-110 duration-300"
                   onClick={() => HandleSelected(idx)}
                 >
-                  <span>{items.name}</span>
+                  <p>{items.name}</p>
                 </div>
               </Link>
             ))}

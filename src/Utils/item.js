@@ -10,7 +10,9 @@ import {
 } from "react-icons/bs";
 import { HiOutlineUserGroup } from "react-icons/hi";
 import {
+  AiFillCar,
   AiFillInstagram,
+  AiFillPhone,
   AiOutlineProfile,
   AiOutlineSlack,
   AiOutlineUnorderedList,
@@ -33,8 +35,8 @@ import { CgListTree, CgSize } from "react-icons/cg";
 import { IoMdColorWand } from "react-icons/io";
 import { GiExitDoor } from "react-icons/gi";
 
-import { CiViewList } from "react-icons/ci";
-
+import { CiLocationOn, CiViewList } from "react-icons/ci";
+import { FcCalendar } from "react-icons/fc";
 export const IconMapping = {
   SiZalo: SiZalo,
   BsFacebook: BsFacebook,
@@ -66,6 +68,10 @@ export const IconMapping = {
   TbCubeSend: TbCubeSend,
   BsFillSendXFill: BsFillSendXFill,
   CiViewList: CiViewList,
+  AiFillPhone: AiFillPhone,
+  CiLocationOn: CiLocationOn,
+  FcCalendar: FcCalendar,
+  AiFillCar: AiFillCar,
 };
 
 export const ProductSidebarAdmin = [

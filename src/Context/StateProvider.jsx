@@ -4,6 +4,7 @@ const StateContext = createContext();
 
 export const StateProvider = ({ children }) => {
   const [isUploadProduct, setIsUploadProduct] = useState("");
+  const [isOpen, setIsOpen] = useState("");
   const [isSelected, setSelected] = useState(0);
   const [isRefetch, setIsRefetch] = useState("");
 
@@ -13,6 +14,8 @@ export const StateProvider = ({ children }) => {
   return (
     <StateContext.Provider
       value={{
+        isOpen,
+        setIsOpen,
         isLoading,
         setIsLoading,
         isSelected,

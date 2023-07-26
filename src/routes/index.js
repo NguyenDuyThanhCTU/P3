@@ -2,6 +2,8 @@
 // import Admin from "../components/Admin/Admin";
 // import DefaultLayout from "../Layout/DefaultLayout";
 import Home from "../components/Client/Home/Home";
+import Introduction from "../components/Client/Introduction/Introduction";
+import Order from "../components/Client/Order/Order";
 // import AdminLayout from "../Layout/AdminLayout/AdminLayout";
 // import Introduction from "../components/Client/Introduction/Introduction";
 // import Contact from "../components/Client/Contact/Contact";
@@ -27,6 +29,16 @@ export const AllRoutes = [
   {
     path: "/",
     component: Home,
+    Layout: ClientLayout,
+  },
+  {
+    path: "/thue-xe",
+    component: Order,
+    Layout: ClientLayout,
+  },
+  {
+    path: "/gioi-thieu",
+    component: Introduction,
     Layout: ClientLayout,
   },
 ];
