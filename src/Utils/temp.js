@@ -143,3 +143,22 @@ export const SlideItems = [
       "https://xedulichvungtau.com/wp-content/uploads/2022/04/9914-1639360236-gia-xe-hyundai-accent-lan-banh-thang-12-1-min.jpg",
   },
 ];
+
+export const SlideItems1 = [
+  {
+    image:
+      "https://xedulichvungtau.com/wp-content/uploads/2022/04/tong-dai-KD-min-1.jpg",
+  },
+  {
+    image:
+      "https://xedulichvungtau.com/wp-content/uploads/2022/04/xevungtau2-min.jpg",
+  },
+  {
+    image:
+      "https://xedulichvungtau.com/wp-content/uploads/2022/04/ve-may-bay.jpg",
+  },
+  {
+    image:
+      "https://xedulichvungtau.com/wp-content/uploads/2022/04/tong-dai-KD-min-1.jpg",
+  },
+];

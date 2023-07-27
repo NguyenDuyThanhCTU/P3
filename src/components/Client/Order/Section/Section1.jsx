@@ -20,16 +20,16 @@ const Section1 = () => {
           <h3 className=" text-secondary uppercase font-bold text-[32px] text-center">
             Tuyến cố định
           </h3>
-          <div className="w-2/3 mx-auto">
+          <div className="d:w-2/3 p:w-auto mx-auto">
             <div>
-              <div className="grid grid-cols-5 py-2 border-main border-t border-b font-semibold text-[18px] mt-4">
+              <div className="grid p:grid-cols-4 d:grid-cols-5 py-2 gap-3 border-main border-t border-b font-semibold text-[18px] mt-4">
                 <span>Điểm đón</span>
                 <span>Điểm đến</span>
                 <span>Số chiều</span>
                 <span>Giá (VNĐ)</span>
                 <span></span>
               </div>
-              <div className="grid grid-cols-5 gap-2 py-2 border-b border-main">
+              <div className="grid p:grid-cols-4 d:grid-cols-5 gap-2 py-2 border-b border-main">
                 {OrderTourItem.map((items, idx) => (
                   <>
                     <p>{items.startpoint}</p>
@@ -37,7 +37,7 @@ const Section1 = () => {
                     <p>{items.ways}</p>
                     <p>{items.price}</p>
                     <a
-                      className="cursor-pointer hover:scale-110 duration-300"
+                      className="cursor-pointer hover:scale-110 duration-300 d:block p:hidden"
                       href="https://zalo.me/0933456474"
                       target="_blank"
                     >
@@ -54,16 +54,16 @@ const Section1 = () => {
           <h3 className=" text-secondary uppercase font-bold text-[32px] text-center">
             Tuyến khác
           </h3>
-          <div className="w-2/3 mx-auto ">
+          <div className="d:w-2/3 p:w-auto mx-auto ">
             <div>
-              <div className="grid grid-cols-5 py-2 border-t border-main border-b font-semibold text-[18px] mt-4">
+              <div className="grid p:grid-cols-4 d:grid-cols-5 py-2 gap-3 border-main border-t border-b font-semibold text-[18px] mt-4">
                 <span>Điểm đón</span>
                 <span>Điểm đến</span>
                 <span>Số chiều</span>
                 <span>Giá (VNĐ)</span>
                 <span></span>
               </div>
-              <div className="grid grid-cols-5 gap-2 py-2 border-b border-main">
+              <div className="grid p:grid-cols-4 d:grid-cols-5 gap-2 py-2 border-b border-main">
                 {OrderTourItem1.map((items, idx) => (
                   <>
                     <p>{items.startpoint}</p>
@@ -71,7 +71,7 @@ const Section1 = () => {
                     <p>{items.ways}</p>
                     <p>{items.price}</p>
                     <a
-                      className="cursor-pointer hover:scale-110 duration-300"
+                      className="cursor-pointer hover:scale-110 duration-300 d:block p:hidden"
                       href="https://zalo.me/0933456474"
                       target="_blank"
                     >

@@ -4,12 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import { Autoplay } from "swiper";
-import { SlideItems } from "../../../../Utils/temp";
+import { SlideItems, SlideItems1 } from "../../../../Utils/temp";
 
 const Section1 = () => {
   return (
     <>
-      <div className="relative w-full h-[720px] ">
+      <div className="relative w-full   ">
         <Swiper
           loop={true}
           autoplay={{
@@ -17,20 +17,21 @@ const Section1 = () => {
             disableOnInteraction: false,
           }}
           modules={[Autoplay]}
-          className="mySwiper"
+          className="mySwiper -z-10"
         >
-          {SlideItems.map((items) => (
+          {SlideItems1.map((items) => (
             <>
               <SwiperSlide>
                 <img
                   src={items.image}
                   alt="banner"
-                  className="object-coverx  w-full"
+                  className="object-coverx  w-full z-0"
                 />
               </SwiperSlide>
             </>
           ))}
         </Swiper>
+
         <div className="text-white bg-[rgba(0,0,0,0.7)] absolute  d:w-[550px] p:w-[250px] p:right-0 d:right-32  z-10 d:bottom-20 p:bottom-0 d:text-[17px] p:text-[10px]">
           <p className="d:py-6 d:px-5 p:p-2 ">
             DỊCH VỤ Du Lịch Khánh Du thuộc Công ty vận tải hành khách Khánh Du

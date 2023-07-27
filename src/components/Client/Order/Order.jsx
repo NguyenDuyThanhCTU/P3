@@ -5,7 +5,7 @@ import Section3 from "./Section/Section3";
 
 const Order = () => {
   return (
-    <div className="w-[60vw] mx-auto flex flex-col items-center pt-5 gap-10">
+    <div className="d:w-[60vw] d:mx-auto p:w-auto p:mx-2 flex flex-col items-center pt-5 gap-10">
       <Section1 />
       <Section2 />
       <Section3 />

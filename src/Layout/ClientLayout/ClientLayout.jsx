@@ -26,10 +26,12 @@ const ClientLayout = ({ children }) => {
 
   return (
     <div className="relative ">
-      <Helmet>
-        <title>{TradeMarkData.websiteName}</title>
-        <link rel="icon" href={TradeMarkData.websiteIco} />
-      </Helmet>
+      {/* <Helmet>
+        <title>Dịch vụ vận tải hành khách Khánh Du</title>
+        <link rel="icon" href=" 
+" />
+
+      </Helmet> */}
       <Loading />
       <div
         className={`absolute  w-full flex justify-center items-center bg-[rgba(0,0,0,0.65)] overflow-hidden duration-300 ${
@@ -37,23 +39,24 @@ const ClientLayout = ({ children }) => {
         }`}
       >
         <IoClose
-          className="absolute top-0 text-white right-0 text-[34px] cursor-pointer hover:scale-110 duration-300"
+          className="absolute top-0 text-white right-0 text-[34px] cursor-pointer hover:scale-110 duration-300 p:z-[999]"
           onClick={() => setIsOpen("")}
         />
-        <div className="w-[50vw]">
+        <div className="d:w-[50vw] p:w-auto">
           <Booking />
         </div>
       </div>
-      <div>
+      <div className="z-50 relative">
         <Header />
-        <div className="bg-[#555555] ">{children}</div>
-        <Footer />
-        <Copyright />
       </div>
-      <div>
-        <OnTop />
-        <Hotline />
-      </div>
+
+      <div className="bg-[#555555] ">{children}</div>
+
+      <Footer />
+      <Copyright />
+
+      <OnTop />
+      <Hotline />
     </div>
   );
 };

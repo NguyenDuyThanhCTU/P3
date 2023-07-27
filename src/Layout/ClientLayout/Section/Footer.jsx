@@ -8,8 +8,8 @@ import { CiLocationOn } from "react-icons/ci";
 const Footer = () => {
   return (
     <div className="bg-[url(https://xedulichvungtau.com/wp-content/uploads/2022/04/tong-dai.jpg)] bg-no-repeat bg-cover ">
-      <div className="bg-[rgba(0,0,0,0.65)]">
-        <div className="flex mx-auto w-[80vw] py-20 gap-10 justify-center">
+      <div className="bg-[rgba(0,0,0,0.65)] ">
+        <div className="flex mx-auto w-[80vw] py-20 gap-10 justify-center d:flex-row p:flex-col">
           <div className="flex flex-col font-LexendDeca gap-5 ">
             <h3 className="text-[22px] font-bold text-white">
               Đặt xe trực tuyến
