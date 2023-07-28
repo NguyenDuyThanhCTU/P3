@@ -12,13 +12,13 @@ const Introduction = () => {
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
-      <div className="d:w-[60vw] p:w-auto flex items-center">
+      <div className="w-auto flex items-center">
         <img
           src="https://xedulichvungtau.com/wp-content/uploads/2022/04/Xe-KD-min.jpg"
           alt="img"
         />
       </div>
-      <div className="p:w-auto  d:w-[60vw] mx-auto flex flex-col gap-10">
+      <div className="p:w-auto  d:w-[80vw] mx-auto flex flex-col gap-10">
         <Section1 />
         <Section2 />
       </div>

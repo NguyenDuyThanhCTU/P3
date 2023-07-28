@@ -9,8 +9,8 @@ const Section2 = () => {
           Thực hiện các tour du lịch gia đình và hợp tác cùng công ty
         </h3>
 
-        <div className="d:w-[50vw] p:w-auto mx-2 flex items-center">
-          <div className="grid d:grid-cols-3 gap-5 p:grid-cols-2">
+        <div className="d:w-[80vw] p:w-auto mx-2 flex items-center justify-center">
+          <div className="grid d:grid-cols-4 gap-5 p:grid-cols-2">
             {ProductItems.map((items) => (
               <div className="cursor-pointer hover:scale-110 duration-300">
                 <img

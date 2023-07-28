@@ -33,23 +33,23 @@ const ClientLayout = ({ children }) => {
 
       </Helmet> */}
       <Loading />
+
+      <div className="z-50 relative">
+        <Header />
+      </div>
       <div
-        className={`absolute  w-full flex justify-center items-center bg-[rgba(0,0,0,0.65)] overflow-hidden duration-300 ${
+        className={`relative  w-full flex justify-center items-center bg-[rgba(0,0,0,0.65)] overflow-hidden duration-300 z-20  ${
           isOpen === "Drop-header" ? "h-[100vh]" : "h-0"
         }`}
       >
         <IoClose
-          className="absolute top-0 text-white right-0 text-[34px] cursor-pointer hover:scale-110 duration-300 p:z-[999]"
+          className="absolute top-0 text-white right-0 text-[34px] cursor-pointer hover:scale-110 duration-300 z-50"
           onClick={() => setIsOpen("")}
         />
-        <div className="d:w-[50vw] p:w-auto">
+        <div className="d:w-[50vw] p:w-auto ">
           <Booking />
         </div>
       </div>
-      <div className="z-50 relative">
-        <Header />
-      </div>
-
       <div className="bg-[#555555] ">{children}</div>
 
       <Footer />

@@ -22,7 +22,7 @@ const Section1 = () => {
             lành nghề thông thuộc các tuyến đường trãi khắp đất nước Việt Nam.
           </p>
         </div>
-        <div className="w-[50vw] flex items-center">
+        <div className="w-[80vw] flex items-center gap-10 px-4 d:flex-row p:flex-col">
           <Swiper
             loop={true}
             autoplay={{
@@ -38,7 +38,28 @@ const Section1 = () => {
                   <img
                     src={items.image}
                     alt="banner"
-                    className="w-full rounded-xl "
+                    className="w-full rounded-xl d:h-[425px] p:h-[200px] object-cover"
+                  />
+                </SwiperSlide>
+              </>
+            ))}
+          </Swiper>
+          <Swiper
+            loop={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
+            className="mySwiper"
+          >
+            {SlideItems.map((items) => (
+              <>
+                <SwiperSlide>
+                  <img
+                    src={items.image}
+                    alt="banner"
+                    className="w-full rounded-xl d:h-[425px] p:h-[200px] object-cover"
                   />
                 </SwiperSlide>
               </>

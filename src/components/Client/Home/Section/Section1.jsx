@@ -25,7 +25,10 @@ const Section1 = () => {
                 <img
                   src={items.image}
                   alt="banner"
-                  className="object-coverx  w-full z-0"
+                  className="object-coverx  w-full z-0 cursor-pointer"
+                  onClick={() => {
+                    window.open("tel:0933456474", "_blank");
+                  }}
                 />
               </SwiperSlide>
             </>
