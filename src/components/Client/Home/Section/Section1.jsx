@@ -4,9 +4,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import { Autoplay } from "swiper";
-import { SlideItems, SlideItems1 } from "../../../../Utils/temp";
+import { useData } from "../../../../Context/DataProviders";
 
 const Section1 = () => {
+  const { Slides } = useData();
   return (
     <>
       <div className="relative w-full   ">
@@ -19,13 +20,13 @@ const Section1 = () => {
           modules={[Autoplay]}
           className="mySwiper -z-10"
         >
-          {SlideItems1.map((items) => (
+          {Slides.map((items) => (
             <>
               <SwiperSlide>
                 <img
                   src={items.image}
                   alt="banner"
-                  className="object-coverx  w-full z-0 cursor-pointer"
+                  className="object-coverx  w-full z-0 cursor-pointer max-h-[655px]"
                   onClick={() => {
                     window.open("tel:0933456474", "_blank");
                   }}

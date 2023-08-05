@@ -17,46 +17,13 @@ const AddProduct = ({}) => {
   const [imageUrl, setImageUrl] = useState();
   const [error, setError] = useState(false);
   const [Title, setTitle] = useState();
-  const [Content, setContent] = useState();
-  const [TitleType, setTitleType] = useState("Thiết kế - Thi công nội thất");
-  const [ContentType, setContentType] = useState("");
+  const [Price, setPrice] = useState();
+  const [NameType, setNameType] = useState("Thiết kế - Thi công nội thất");
+  const [type, setType] = useState("");
 
   const { setIsUploadProduct, setIsRefetch } = useStateProvider();
   const { productTypes } = useData();
-
-  const handleDiscard = () => {
-    setContent("");
-    setTitle("");
-    setImageUrl("");
-  };
-
-  const HandleSubmit = () => {
-    if (!ContentType || !TitleType || !Content || !Title || !imageUrl) {
-      notification["error"]({
-        message: "Lỗi !!!",
-        description: `Vui lòng bổ sung đầy đủ thông tin !`,
-      });
-    } else {
-      const data = {
-        image: imageUrl,
-        title: Title,
-        content: Content,
-        parentType: TitleType,
-        type: ContentType,
-      };
-      console.log(data);
-      addDocument("products", data).then(() => {
-        notification["success"]({
-          message: "Tải lên thành công!",
-          description: `Sản phẩm của bạn đã được tải lên !`,
-        });
-
-        setIsRefetch("upload successful");
-        handleDiscard();
-      });
-    }
-  };
-
+  console.log(productTypes);
   const uploadImage = async (e) => {
     let selectImage = e.target.files[0];
     const filetypes = ["image/jpeg", "image/jpg", "image/png"];
@@ -84,6 +51,50 @@ const AddProduct = ({}) => {
         });
     } else {
       setError(true);
+    }
+  };
+
+  const handleDiscard = () => {
+    setPrice("");
+    setTitle("");
+    setImageUrl("");
+  };
+
+  const HandleSubmit = () => {
+    if (!type || !NameType || !Title || !imageUrl) {
+      notification["error"]({
+        message: "Lỗi !!!",
+        description: `Vui lòng bổ sung đầy đủ thông tin !`,
+      });
+    } else {
+      const data = {
+        image: imageUrl,
+        title: Title,
+        Price: Price,
+        parentType: NameType,
+        type: type,
+      };
+
+      addDocument("products", data).then(() => {
+        notification["success"]({
+          message: "Tải lên thành công!",
+          description: `Sản phẩm của bạn đã được tải lên !`,
+        });
+
+        setIsRefetch("upload successful");
+        // handleDiscard();
+      });
+    }
+  };
+
+  const handleTitleChange = (e) => {
+    const selectedName = e.target.value;
+    setNameType(selectedName);
+    const selectedItem = productTypes.find(
+      (item) => item.name === selectedName
+    );
+    if (selectedItem) {
+      setType(selectedItem.type);
     }
   };
 
@@ -163,11 +174,7 @@ const AddProduct = ({}) => {
                 <div className="grid grid-cols-2 gap-5 w-full">
                   <div className="  flex flex-col gap-3">
                     <Input text="Tiêu đề" Value={Title} setValue={setTitle} />
-                    <Input
-                      text="Nội dung"
-                      Value={Content}
-                      setValue={setContent}
-                    />
+                    <Input text="Nội dung" Value={Price} setValue={setPrice} />
                     <Input
                       text="Liên kết hình ảnh"
                       Value={imageUrl}
@@ -176,16 +183,12 @@ const AddProduct = ({}) => {
                   </div>
                   <div className="  flex flex-col gap-3">
                     <div className="flex flex-col gap-2">
-                      <label className="text-md font-medium ">
-                        Mục bài viết:
-                      </label>
+                      <label className="text-md font-medium ">Loại xe</label>
                       <select
                         className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
-                        onChange={(e) => {
-                          setTitleType(e.target.value);
-                        }}
+                        onChange={handleTitleChange}
                       >
-                        {TypeProductItems.map((item, idx) => (
+                        {productTypes.map((item, idx) => (
                           <option
                             key={idx}
                             className=" outline-none capitalize bg-white text-gray-700 text-md p-2 hover:bg-slate-300"
@@ -194,29 +197,6 @@ const AddProduct = ({}) => {
                             {item.name}
                           </option>
                         ))}
-                      </select>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="text-md font-medium ">
-                        Loại bài viết
-                      </label>
-                      <select
-                        className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
-                        onChange={(e) => {
-                          setContentType(e.target.value);
-                        }}
-                      >
-                        {productTypes
-                          ?.filter((item) => item.type === TitleType)
-                          .map((item, idx) => (
-                            <option
-                              key={idx}
-                              className=" outline-none capitalize bg-white text-gray-700 text-md p-2 hover:bg-slate-300"
-                              value={item.name}
-                            >
-                              {item.name}
-                            </option>
-                          ))}
                       </select>
                     </div>
                   </div>

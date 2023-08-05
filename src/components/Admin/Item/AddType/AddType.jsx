@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 
 import { Popconfirm, message, notification } from "antd";
@@ -13,12 +13,11 @@ import {
   addDocument,
   delDocument,
 } from "../../../../Config/Services/Firebase/FireStoreDB";
-import { TypeProductItems } from "../../../../Utils/item";
+import diacritic from "diacritic";
 
 const AddType = () => {
   const [Name, setName] = useState("");
-  const [isTitle, setTitle] = useState("Thiết kế - Thi công nội thất");
-
+  const [Type, setType] = useState("");
   const { setIsRefetch, setIsUploadProduct } = useStateProvider();
   const { productTypes } = useData();
 
@@ -36,7 +35,7 @@ const AddType = () => {
     } else {
       const data = {
         name: Name,
-        type: isTitle,
+        type: Type,
       };
 
       addDocument("productTypes", data).then(() => {
@@ -60,6 +59,20 @@ const AddType = () => {
     });
     setIsRefetch("deleted");
   };
+
+  const convertToCodeFormat = (text) => {
+    const textWithoutDiacritics = diacritic.clean(text);
+    return textWithoutDiacritics.replace(/\s+/g, "-").toLowerCase();
+  };
+
+  useEffect(() => {
+    const handleChange = () => {
+      const userInput = Name;
+      const formattedCode = convertToCodeFormat(userInput);
+      setType(formattedCode);
+    };
+    handleChange();
+  }, [Name]);
 
   return (
     <div
@@ -147,31 +160,6 @@ const AddType = () => {
                   Value={Name}
                   setValue={setName}
                 />
-
-                <div
-                  className={`flex flex-col gap-2 h-[100px] overflow-hidden`}
-                >
-                  <label className="text-md font-medium ">
-                    Chọn mục cần thêm:
-                  </label>
-                  <select
-                    className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
-                    onChange={(e) => {
-                      setTitle(e.target.value);
-                    }}
-                    value={isTitle}
-                  >
-                    {TypeProductItems.map((item, idx) => (
-                      <option
-                        key={idx}
-                        className=" outline-none capitalize bg-white text-gray-700 text-md p-2 hover:bg-slate-300"
-                        value={item.name}
-                      >
-                        {item.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
 
                 <div className="flex gap-6 mt-10">
                   <button

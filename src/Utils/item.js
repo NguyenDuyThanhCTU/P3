@@ -298,6 +298,7 @@ export const HeaderItems = [
 export const TypeProductItems = [
   {
     name: "",
+    type: "",
   },
 ];
 
