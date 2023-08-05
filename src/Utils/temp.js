@@ -76,6 +76,77 @@ export const OrderTourItem1 = [
   },
 ];
 
+export const OrderItems = [
+  {
+    title: 'Thuê xe du lịch Cần Thơ đi Phan Thiết "Mũi Né" ',
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/Thue%20Xe%2FCanTho-PhanThiet.png?alt=media&token=31e0b306-df3a-40da-ad5d-be4b80a9ba88",
+    content: [
+      {
+        content: "Xe gia đình, không có logo Grab, Taxi, rất sạch sẽ",
+      },
+      {
+        content: "Đưa đón tận nơi tại Cần Thơ và Phan Thiết",
+      },
+      {
+        content: "Tài xế lành nghề, nhiều kinh nghiệm và chuyên nghiệp",
+      },
+    ],
+  },
+  {
+    title: "Thuê xe du lịch Cần Thơ đi Sài Gòn",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/Thue%20Xe%2FCanTho-SaiGon.png?alt=media&token=3b7cb5c9-e3e8-4dc2-b74f-9061d1fb30b3",
+    content: [
+      {
+        content: "Xe gia đình, không có logo Grab, Taxi, rất sạch sẽ",
+      },
+
+      {
+        content: "Tài xế lành nghề, nhiều kinh nghiệm và chuyên nghiệp",
+      },
+    ],
+  },
+  {
+    title: "Thuê xe du lịch Cần Thơ đi Vũng Tàu",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/Thue%20Xe%2FCanTho-VungTau.png?alt=media&token=fb8a533d-12c1-4c42-ad09-bf0a0181fd10",
+    content: [
+      {
+        content: "Xe gia đình, không có logo Grab, Taxi, rất sạch sẽ",
+      },
+
+      {
+        content: "Tài xế lành nghề, nhiều kinh nghiệm và chuyên nghiệp",
+      },
+    ],
+  },
+  {
+    title: "Thuê xe du lịch Sài Gòn đi Phan Thiết",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/Thue%20Xe%2FSaiGon-PhanThiet.png?alt=media&token=a3747d27-bafb-459e-b273-c634d19c70d9",
+    content: [
+      {
+        content: "",
+      },
+    ],
+  },
+  {
+    title: "huê xe du lịch Sài Gòn đi Vũng Tàu",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/Thue%20Xe%2FSaiGon-VungTau.png?alt=media&token=0fe7eca0-aca2-4b12-ba9d-1d0270cfbdde",
+    content: [
+      {
+        content: "Xe gia đình, không có logo Grab, Taxi, rất sạch sẽ",
+      },
+
+      {
+        content: "Tài xế lành nghề, nhiều kinh nghiệm và chuyên nghiệp",
+      },
+    ],
+  },
+];
+
 export const ProductItems = [
   {
     title: "Xe du lịch 4 chỗ Sài Gòn - Vũng Tàu",

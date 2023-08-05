@@ -295,4 +295,10 @@ export const HeaderItems = [
   },
 ];
 
+export const TypeProductItems = [
+  {
+    name: "",
+  },
+];
+
 //Custom
