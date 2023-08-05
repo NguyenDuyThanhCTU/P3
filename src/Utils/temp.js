@@ -97,7 +97,7 @@ export const ProductItems = [
   {
     title: "Xe du lịch Vũng Tàu - Cần Thơ",
     image:
-      "https://xedulichvungtau.com/wp-content/uploads/2022/04/photo-1-1642209236739171878822-min.jpg",
+      "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/Thue%20Xe%2Fz4565069153744_c3afcf686b9b7776950ed90f33ee6801.jpg?alt=media&token=1ff90303-f0b9-457b-bad2-3dffc37244ab",
     price: "1.990.000",
     type: "normal",
     seat: "4",
