@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { OrderTourItem, ProductItems } from "../../../../Utils/temp";
+import {
+  OrderTourItem,
+  ProductItems,
+  productItems,
+} from "../../../../Utils/temp";
 import { AiOutlineDown } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useData } from "../../../../Context/DataProviders";
+import Order from "../../Order/Order";
 
 const Section2 = () => {
   const { Products, productTypes } = useData();
@@ -25,6 +30,11 @@ const Section2 = () => {
     }
   }, [Products, isSort]);
 
+  const itemsWithPrice = DataFetch?.filter((items) => items.Price);
+  const itemsWithoutPrice = DataFetch?.filter((items) => !items.Price);
+
+  const combinedItems = [...itemsWithPrice, ...itemsWithoutPrice];
+  console.log(DataFetch);
   return (
     <div className="flex justify-center w-full mt-5">
       <div className="d:w-[100vw] p:w-auto flex gap-5 justify-center">
@@ -53,45 +63,93 @@ const Section2 = () => {
           </div>
         </div>
         <div className="flex-[80%] first-letter p:w-auto flex flex-col gap-3 font-LexendDeca">
-          <div className="bg-[#f5f5f5] w-full flex justify-between p-4">
-            <div>{nameType}</div>
-            <div>
-              Thuê Xe 4 chỗ 8 chỗ carnival đi
-              <strong className="text-red-500"> càng xa </strong> giá{" "}
-              <strong className="text-red-500">càng rẻ</strong>
+          <div className="bg-black w-full flex justify-between p-4">
+            <div className="font-bold text-main text-[28px] d:text-[32p] text-center">
+              Thuê xe 4 chỗ 8 chỗ carnival đi càng xa giá càng rẻ vui lòng liên
+              hệ để được giảm 20%{" "}
+              <a href="tel:0933456474" className="underline">
+                Sdt: 0933456474
+              </a>
             </div>
           </div>
-          <div className="grid d:grid-cols-6 d:gap-10  p:gap-2 px-2 p:grid-cols-2 justify-center ">
-            {DataFetch.map((items, idx) => (
-              <>
-                <div
-                  className="h-auto d:w-auto  p:w-auto hover:scale-105 duration-300 hover:shadow-2xl cursor-pointer flex flex-col items-center bg-black text-main justify-between"
-                  onClick={() => {
-                    window.open('tel:"0933456474', "_blank");
-                  }}
-                >
-                  <div className=" m-2 h-full flex flex-col gap-1 item justify-between">
-                    <img
-                      src={items.image}
-                      alt="banner"
-                      className=" w-full h-[140px] object-cover"
-                    />
+          <div className="flex flex-col gap-5">
+            <div className="grid d:grid-cols-6 d:gap-10  p:gap-2 px-2 p:grid-cols-2 justify-center ">
+              {productItems.map((items, idx) => (
+                <>
+                  <div
+                    className="h-auto d:w-auto  p:w-auto hover:scale-105 duration-300 hover:shadow-2xl cursor-pointer flex flex-col items-center bg-black text-main justify-between"
+                    onClick={() => {
+                      window.open('tel:"0933456474', "_blank");
+                    }}
+                  >
+                    <div className=" m-2 h-full flex flex-col gap-1 item justify-between">
+                      <img
+                        src={items.image}
+                        alt="banner"
+                        className=" w-full h-[140px] object-cover"
+                      />
 
-                    <p className="text-center"> {items.title}</p>
+                      <p className="text-center"> {items.title}</p>
 
-                    {items.Price && (
-                      <p className="text-red-500 text-[15px]">
-                        Giá chỉ {items.Price} VNĐ
+                      {items.price && (
+                        <p className="text-red-500 text-[15px] text-center">
+                          Giá chỉ {items.price} VNĐ
+                        </p>
+                      )}
+                      <p className="px-5 py-2 bg-main text-white text-center font-semibold hover:scale-105 duration-300 rounded-sm">
+                        {" "}
+                        Liên hệ
                       </p>
-                    )}
-                    <p className="px-5 py-2 bg-main text-white text-center font-semibold hover:scale-105 duration-300 rounded-sm">
-                      {" "}
-                      Liên hệ
-                    </p>
+                    </div>
                   </div>
-                </div>
-              </>
-            ))}
+                </>
+              ))}
+            </div>
+            <div>
+              <Order />
+            </div>
+            <div className="grid d:grid-cols-6 d:gap-10  p:gap-2 px-2 p:grid-cols-2 justify-center ">
+              {itemsWithoutPrice.map((items, idx) => (
+                <>
+                  <div
+                    className="h-auto d:w-auto  p:w-auto hover:scale-105 duration-300 hover:shadow-2xl cursor-pointer flex flex-col items-center bg-black text-main justify-between"
+                    onClick={() => {
+                      window.open('tel:"0933456474', "_blank");
+                    }}
+                  >
+                    <div className=" m-2 h-full flex flex-col gap-1 item justify-between">
+                      <img
+                        src={items.image}
+                        alt="banner"
+                        className=" w-full h-[140px] object-cover"
+                      />
+
+                      <p className="text-center">
+                        {" "}
+                        Liên hệ{" "}
+                        <strong className="font-bold underline">
+                          0933456474
+                        </strong>{" "}
+                        để được tư vấn giá tốt nhất{" "}
+                        <strong className="text-red-500 font-bold ">
+                          Giảm đến 20%
+                        </strong>
+                      </p>
+
+                      {items.Price && (
+                        <p className="text-red-500 text-[15px]">
+                          Giá chỉ {items.Price} VNĐ
+                        </p>
+                      )}
+                      <p className="px-5 py-2 bg-main text-white text-center font-semibold hover:scale-105 duration-300 rounded-sm">
+                        {" "}
+                        Liên hệ
+                      </p>
+                    </div>
+                  </div>
+                </>
+              ))}
+            </div>
           </div>
         </div>
       </div>

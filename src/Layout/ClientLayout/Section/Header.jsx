@@ -21,6 +21,8 @@ const Header = () => {
     }
     if (idx === 3) {
       setIsOpen("Drop-header");
+    } else {
+      setIsOpen(" ");
     }
   };
   return (
